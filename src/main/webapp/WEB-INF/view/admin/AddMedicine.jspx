@@ -1,0 +1,53 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:form="http://www.springframework.org/tags/form">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:body>
+            <div><h1>create new medicine</h1></div>
+            <form:form method="post" action="createmed" commandName="medicine">
+                <table>
+                    <tr>
+                        <td>name</td>
+                        <td><form:input path="name"/></td>
+                    </tr>
+                    <tr>
+                        <td>release form</td>
+                        <td><form:input path="releaseForm"/></td>
+                    </tr>
+                    <tr>
+                        <td>quantity per pack</td>
+                        <td><form:input path="quantityPerPack"/></td>
+                    </tr>
+                    <tr>
+                        <td>composition</td>
+                        <td><form:input path="composition"/></td>
+                    </tr>
+                    <tr>
+                        <td>indication</td>
+                        <td><form:input path="indication"/></td>
+                    </tr>
+                    <tr>
+                        <td>contraindication</td>
+                        <td><form:input path="contraindication"/></td>
+                    </tr>
+                    <tr>
+                        <td>acceptable ages</td>
+                        <td><form:input path="ages"/></td>
+                    </tr>
+                    <tr>
+                        <td>actual quantity</td>
+                        <td><form:input path="actualQuantity"/></td>
+                    </tr>
+                </table>
+                <input type="submit" value="create"/>
+            </form:form>
+            <c:url var="url" value="/admin/viewall"/>
+            <a href="${url}">back</a>
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

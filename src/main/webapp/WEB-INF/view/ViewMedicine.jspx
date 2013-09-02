@@ -1,0 +1,58 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:body>
+            <div><h1>medicine details</h1></div>
+            <table>
+                <tr>
+                    <td>name</td>
+                    <td>${medicine.name}</td>
+                </tr>
+                <tr>
+                    <td>release form</td>
+                    <td>${medicine.releaseForm}</td>
+                </tr>
+                <tr>
+                    <td>quantity per pack</td>
+                    <td>${medicine.quantityPerPack}</td>
+                </tr>
+                <tr>
+                    <td>composition</td>
+                    <td>${medicine.composition}</td>
+                </tr>
+                <tr>
+                    <td>indication</td>
+                    <td>${medicine.indication}</td>
+                </tr>
+                <tr>
+                    <td>contraindication</td>
+                    <td>${medicine.contraindication}</td>
+                </tr>
+                <tr>
+                    <td>acceptable ages</td>
+                    <td>${medicine.ages}</td>
+                </tr>
+                <tr>
+                    <td>in stock</td>
+                    <td><c:choose>
+                            <c:when test="${medicine.actualQuantity>0}">
+                                yes
+                            </c:when>
+                            <c:otherwise>
+                                no
+                            </c:otherwise>
+                        </c:choose></td>
+                </tr>
+            </table>
+
+            <c:url var="url" value="/viewall"/>
+            <a href="${url}">back</a>
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

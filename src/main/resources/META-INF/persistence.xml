@@ -5,7 +5,7 @@
     <class>com.epam.pharmacymavenspringmvc.model.Medicine</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/PharmacyDB"/>
-      <property name="javax.persistence.jdbc.password" value="pk0u64"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.user" value="waffle"/>
     </properties>
